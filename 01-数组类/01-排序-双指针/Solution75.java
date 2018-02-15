@@ -4,7 +4,7 @@
 */
 class Solution75 {
     public void sortColors(int[] nums) {
-        //解法1，两次双指针算法
+        //解法1，两次双指针算法 时间 O(n) 空间 O(1)
         //i指针，遍历全部
         //k指针，[0,k) 存 0,1 [k,nums.length) 存 2
         int k = 0;

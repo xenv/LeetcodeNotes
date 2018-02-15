@@ -7,7 +7,7 @@ class Solution283 {
         if (nums == null || nums.length <= 1) {
             return;
         }
-        //双指针 i, k
+        //双指针 i, k 时间 O(n) 空间 O(1)
         //i遍历全局
         //[0,k)存不含0的数组
         int k = 0;

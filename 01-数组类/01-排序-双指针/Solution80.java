@@ -11,7 +11,7 @@ class Solution80 {
             return nums.length;
         }
         
-        //双指针i,k
+        //双指针i,k 时间 O(n) 空间 O(1)
         //i遍历全局
         //[0,k]存放一个，“一个数最多只重复两次” 的数组
         //原理和Solution26基本一样，注意暗坑

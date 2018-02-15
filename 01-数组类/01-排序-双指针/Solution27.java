@@ -8,7 +8,7 @@ class Solution27 {
             return 0;
         }
 
-    	//双指针 i,k
+    	//双指针 i,k 时间 O(n) 空间 O(1)
         //i 遍历全部
         //[0,k) 不包含 val
 
