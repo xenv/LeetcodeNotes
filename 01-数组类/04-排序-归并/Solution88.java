@@ -13,6 +13,7 @@ class Solution88 {
         // aux[0,m) 为 nums1 的数字 定一个标记点 l [l,m) 还没使用
         // nums2[0,n) 为nums2 的数字，定一个标记点 r [r,n) 还没使用
         // nums1[0,n+m) 需要一个遍历全局 i 
+        // Ps 数据量小的情况下，远慢于系统的三路快排 Arrays.sort()
         int[] aux = Arrays.copyOfRange(nums1, 0, m );
         int l = 0,r = 0;
         for (int i = 0; i < m + n; i++) {
