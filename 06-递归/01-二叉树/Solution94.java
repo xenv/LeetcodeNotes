@@ -16,14 +16,21 @@
 class Solution94 {
     public List<Integer> inorderTraversal(TreeNode root) {
         List<Integer> res = new ArrayList<Integer>();
-        helper(root, res);
+        inorderTraversal(root, res);
         return res;
     }
-    private void helper(TreeNode node, List<Integer> list){
-        if(node != null){
-            helper(node.left, list);
-            list.add(node.val);
-            helper(node.right, list);
+
+    private void inorderTraversal(TreeNode node, List<Integer> list){
+        // 底层
+        if(node == null){
+            return ;
         }
+        // 中层
+        // 下
+        inorderTraversal(node.left, list);
+        list.add(node.val);
+        inorderTraversal(node.right, list);
+        // 回
+        return ;
     }
 }

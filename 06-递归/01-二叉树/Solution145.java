@@ -14,16 +14,23 @@
  * }
  */
 class Solution145 {
-    public List<Integer> postorderTraversal(TreeNode root) {
+    public List<Integer> preorderTraversal(TreeNode root) {
         List<Integer> res = new ArrayList<Integer>();
-        helper(root, res);
+        preorderTraversal(root, res);
         return res;
     }
-    private void helper(TreeNode node, List<Integer> list) {
-        if(node != null){
-            helper(node.left, list);
-            helper(node.right, list);
-            list.add(node.val);
+
+    private void preorderTraversal(TreeNode node, List<Integer> list){
+        // 底层
+        if(node == null){
+            return ;
         }
+        // 中层
+        // 下
+        list.add(node.val);
+        preorderTraversal(node.left, list);
+        preorderTraversal(node.right, list);
+        // 回
+        return ;
     }
 }
