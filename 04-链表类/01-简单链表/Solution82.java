@@ -15,16 +15,18 @@ class Solution82 {
     public ListNode deleteDuplicates(ListNode head) {
         ListNode dummyHead = new ListNode(0);
         dummyHead.next = head;
-        ListNode scanner = dummyHead;
-        Integer temp = null;
-        while (scanner.next != null) {
-            if ((scanner.next.next != null && scanner.next.val == scanner.next.next.val) 
-                || Objects.equals((Integer)scanner.next.val, temp)) {
-                temp = scanner.next.val;
-                scanner.next = scanner.next.next;
-            } else {
+        ListNode scanner = head;
+        ListNode pre = dummyHead;
+        while(scanner != null) {
+            while (scanner.next != null && scanner.val == scanner.next.val) {
                 scanner = scanner.next;
             }
+            if (scanner == pre.next) {
+                pre = pre.next;
+            } else {
+                pre.next = scanner.next;
+            }
+            scanner = scanner.next;
         }
         return dummyHead.next;
     }
